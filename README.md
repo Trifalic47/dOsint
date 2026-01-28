@@ -20,7 +20,6 @@ Its main goal is to help security researchers, bug bounty hunters and red teamer
 
 ## 🛠️ Tech Stack
 
-```text
 Python ≥ 3.9
 ├── requests             → HTTP / JSON APIs
 ├── dnspython            → DNS queries
@@ -111,4 +110,4 @@ textThis version looks professional yet shows that the project is still growing.
 
 Good luck with the project!
 
-```
+
