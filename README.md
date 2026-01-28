@@ -28,18 +28,24 @@ Python ≥ 3.9
 ├── aiohttp (planned)    → faster async HTTP
 └── python-dotenv        → API key management
 📥 Installation
-Bash# 1. Clone repository
+# 1. Clone repository
+```bash
 git clone https://github.com/Trifalic47/dOsint.git
 cd dOsint
+```
 
-Bash# 2 Run installation script
+# 2 Run installation script
+```shell
 sudo chmod +x ./install.sh
 sudo chmod +x ./run.sh
+```
 
-Bash# 3 Run Tool
+# 3 Run Tool
+```shell
 ./run.sh -h
 ./run.sh -d youtube.com -p https -w e.txt --save test 
-
+```
+```txt
 textTarget domain (without http/https): example.com
 
 [*] Starting passive reconnaissance on example.com
@@ -50,45 +56,12 @@ textTarget domain (without http/https): example.com
 📄 Obsidian Integration (Recommended)
 dOsint automatically creates markdown reports compatible with Obsidian:
 
-Saves files in ./reports/ folder
+Saves files in folder name you gave using --save <dirName> flag
 Uses frontmatter + clean hierarchy
 Adds helpful tags: #target #recon #osint #pending-review
-
-Example generated report structure:
-Markdown---
-domain: example.com
-date: 2025-08-17
-tool: dOsint v0.1
----
-
+```
 # Recon Report: example.com
 
-**Tags:** #target #recon #pending
-
-## Subdomains (47)
-
-- app.example.com
-- dev.example.com
-- staging.example.com
-- api-v2.example.com
-...
-
-## DNS Records
-
-**MX**
-→ mx1.example.com (priority 10)
-→ mx2.google.com (priority 20)
-
-**TXT**
-→ "v=spf1 include:_spf.google.com ~all"
-→ "google-site-verification=abc123..."
-
-## Interesting Files / Metadata
-
-- /docs/Annual-Report-2024.pdf
-  → Author: Johnathan R.
-  → Software: Microsoft Word 2016
-...
 ⚠️ Legal & Ethical Reminder
 This tool is provided for educational purposes and authorized security testing only.
 The author is not responsible for misuse or damage caused by this software.
