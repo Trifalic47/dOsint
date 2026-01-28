@@ -10,6 +10,7 @@ init(autoreset=True)
 def metadata(url, protocol):
     fullUrl = f"{protocol}://{url}"
     tags_list = ['a', 'img', 'video', 'meta']
+    metadata_results = []
 
     generator = HeaderGenerator()
     header = generator()
@@ -20,26 +21,26 @@ def metadata(url, protocol):
     for tag in tags_list:
         tag_names = soup.find_all(tag)
         if tag_names == []:
-            print(f"{Fore.CYAN}[-]No tag found {Fore.RED}{tag}")
+            metadata_results.append(f"[-]No tag found {tag}")
             continue
-        print(f"{Fore.YELLOW}[+]Scraping Tag: {Fore.BLUE}{tag}")
+        metadata_results.append(f"[+]Scraping Tag: {tag}")
 
         for tag_individual in tag_names:
             if tag == 'a':
                 value = tag_individual.get('target')
                 if value is None:
-                    print(f"{Fore.GREEN}{tag_individual['href']}")
+                    metadata_results.append(f"{tag_individual['href']}")
                 else:
-                    print(f"{Fore.GREEN}{tag_individual['href']} {
-                          Fore.BLUE}Method: {Fore.GREEN}{tag_individual['target']}")
+                    metadata_results.append(f"{tag_individual['href']} Method: {tag_individual['target']}")
             elif tag in ['img', 'src']:
                 value = tag_individual.get('src')
                 if value is not None:
-                    print(f"{Fore.GREEN}{tag_individual['src']}")
+                    metadata_results.append(f"{tag_individual['src']}")
                 else:
-                    print(f"{Fore.GREEN}{tag_individual}")
+                    metadata_results.append(f"{tag_individual}")
             else:
-                print(f"{Fore.GREEN}{tag_individual}")
+                metadata_results.append(f"{tag_individual}")
+    return metadata_results
 
 
 if __name__ == "__main__":

@@ -11,15 +11,17 @@ init(autoreset=True)
 
 def startDnsLookup(domainName):
     records = ["A", "AAAA", "CNAME", "MX", "NS", "TXT", "SRV", "SOA", "PTR", "CAA"]
+    dns_records = []
     for record in records:
         try:
             res = dns.resolver.resolve(domainName, record)
             for ans in res:
-                print(f"[+]Found {record}: {Fore.BLUE}{ans.to_text()}")
+                dns_records.append(f"[+]Found {record}: {ans.to_text()}")
         except dns.resolver.NoAnswer:
-            print(f"[-]{record}: {Fore.YELLOW}Not Found")
+            dns_records.append(f"[-]{record}: Not Found")
         except dns.resolver.LifetimeTimeout:
-            print(f"[-]{record}: {Fore.YELLOW}Not Found")
+            dns_records.append(f"[-]{record}: Not Found")
+    return dns_records
 
 
 if __name__ == "__main__":

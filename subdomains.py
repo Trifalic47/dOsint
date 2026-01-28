@@ -17,8 +17,7 @@ def scanSubdomain(domainName):
         for line in lines:
             clean_name = line.replace("*.", "").strip()
             subdomains.add(clean_name)
-    for sub in sorted(subdomains):
-        print(f"{Fore.GREEN}[+]Found: {Fore.BLUE}{sub}")
+    return sorted(subdomains)
 
 
 if __name__ == "__main__":
