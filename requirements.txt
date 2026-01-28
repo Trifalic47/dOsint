@@ -1,0 +1,5 @@
+colorama
+requests
+dnspython
+random-header-generator
+bs4

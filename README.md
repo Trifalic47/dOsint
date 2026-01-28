@@ -30,18 +30,17 @@ Python ≥ 3.9
 └── python-dotenv        → API key management
 📥 Installation
 Bash# 1. Clone repository
-git clone https://github.com/trifalicprime/dOsint.git
+git clone https://github.com/Trifalic47/dOsint.git
 cd dOsint
 
-# 2. Create & activate virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate    # Linux / macOS
-venv\Scripts\activate       # Windows
+Bash# 2 Run installation script
+sudo chmod +x ./install.sh
+sudo chmod +x ./run.sh
 
-# 3. Install dependencies
-pip install -r requirements.txt
-🚀 Quick Start
-Bashpython main.py
+Bash# 3 Run Tool
+./run.sh -h
+./run.sh -d youtube.com -p https -w e.txt --save test 
+
 textTarget domain (without http/https): example.com
 
 [*] Starting passive reconnaissance on example.com
@@ -107,7 +106,7 @@ Always obtain explicit permission before testing any target you do not own.
 
 📄 License
 MIT License
-Made with 🖤 by trifalicprime
+Made with 🖤 by r00tgr3p 
 textThis version looks professional yet shows that the project is still growing. Feel free to modify version numbers, add badges, shields.io icons, or change the tone to be more aggressive / stealth depending on your target audience.
 
 Good luck with the project!

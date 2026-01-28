@@ -1,12 +1,10 @@
 import argparse
 import os
 from colorama import Fore, Style, init
-from subdomains import scanSubdomain
-from directoryScanner import (
-    check_dir, scan_directories
-)
-from dns_recon import startDnsLookup
-from metadata import metadata
+from modules.subdomains import scanSubdomain
+from modules.directoryScanner import scan_directories
+from modules.dns_recon import startDnsLookup
+from modules.metadata import metadata
 
 import requests
 
