@@ -6,14 +6,15 @@ import requests
 
 init(autoreset=True)
 
-if __name__ == "__main__":
-    url = "https://www.google.com"
+
+def metadata(url, protocol):
+    fullUrl = f"{protocol}://{url}"
     tags_list = ['a', 'img', 'video', 'meta']
 
     generator = HeaderGenerator()
     header = generator()
 
-    response = requests.get(url, headers=header)
+    response = requests.get(fullUrl, headers=header)
     soup = BeautifulSoup(response.content, 'lxml')
 
     for tag in tags_list:
@@ -39,3 +40,9 @@ if __name__ == "__main__":
                     print(f"{Fore.GREEN}{tag_individual}")
             else:
                 print(f"{Fore.GREEN}{tag_individual}")
+
+
+if __name__ == "__main__":
+    domain = "youtube.com"
+    protocol = "https"
+    metadata(domain, protocol)

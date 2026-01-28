@@ -25,11 +25,8 @@ def check_dir(url, directory):
         pass
 
 
-def scan_directories():
-    domain = input("Enter domain (e.g., tesla.com): ")
-    protocol = input("Protocol (http/https): ")
-    wordlist_path = input("Path to wordlist: ")
-
+def scan_directories(domain, protocol, wordlist_path):
+    # domain = input("Enter domain (e.g., tesla.com): ")
     # 1. Clean the URL
     base_url = f"{protocol}://{domain}"
 
@@ -50,4 +47,7 @@ def scan_directories():
 
 
 if __name__ == "__main__":
-    scan_directories()
+    domain = "google.com"
+    protocol = "https"
+    wordlist_path = input("Wordlist path:")
+    scan_directories(domain, protocol, wordlist_path)
