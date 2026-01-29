@@ -8,7 +8,7 @@ from modules.metadata import metadata
 
 import requests
 
-init(autoreset=True)
+init(autoreset=True) # Initialize colorama
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OSINT Deep Scraper")
